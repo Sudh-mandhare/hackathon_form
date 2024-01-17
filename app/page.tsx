@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+<Button variant="outline">Button</Button>
 
 import {
   Form,
@@ -24,25 +25,26 @@ import MemberDetails from "@/components/ui/MemberDetails";
 
 export default function Home() {
   const form = useForm();
-  const data =["1 (Team Leader)","2","3"];
+  const data = ["1 (Team Leader)", "2", "3"];
   return (
-    <div className="flex items-center min-w-screen min-h-screen">
-      <main className='flex w-full flex-col justify-center p-12'>
-        <div className='Team Name'>
+    <>
+    <div className="flex items-center min-w-screen min-h-screen bg-[#1D125B]">
+      <main className="flex w-full lg:w-1/2 flex-col justify-center p-10 ">
+        <div className="Team Name bg-[#F7FCF9] p-4">
           <Form {...form}>
-            <form className='space-y-8'>
+            <form className="space-y-8 mb-3">
               <FormField
                 control={form.control}
-                name='teamName'
+                name="teamName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Team Name</FormLabel>
+                    <FormLabel className="text-2xl">Team Name</FormLabel>
                     <FormControl>
-                      <Input placeholder='shadcn' {...field} />
+                      <Input placeholder="Enter team name" {...field} />
                     </FormControl>
-                    <FormDescription>
+                    {/* <FormDescription>
                       Enter the name of your Team
-                    </FormDescription>
+                    </FormDescription> */}
                     <FormMessage />
                   </FormItem>
                 )}
@@ -52,11 +54,18 @@ export default function Home() {
           </Form>
         </div>
         <div>
-          <MemberDetails data = {data[0]}/>
-          <MemberDetails data = {data[1]}/>
-          <MemberDetails data = {data[2]}/>
+          <MemberDetails data={data[0]} />
+          <MemberDetails data={data[1]} />
+          <MemberDetails data={data[2]} />
+        </div>
+        <div className="flex justify-center mt-4 ">
+        <Button className="bg-white text-[#FE9032] hover:scale-[1.01] hover:bg-yellow-200 transition-all">Submit</Button>
         </div>
       </main>
+      <div className="ml-8 border-2 border-[#1D125B] sticky">
+        <img src="https://steptodown.com/istock-downloader/images/steptodown.com171984.jpg" alt="" className="h-[600px] w-[600px]"/>
+      </div>
     </div>
+    </>
   );
 }
