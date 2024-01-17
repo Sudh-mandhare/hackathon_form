@@ -24,9 +24,10 @@ import MemberDetails from "@/components/ui/MemberDetails";
 
 export default function Home() {
   const form = useForm();
+  const data =["1 (Team Leader)","2","3"];
   return (
-    <div className="flex items-center w-1/2 min-h-screen">
-      <main className='flex w-full flex-col  justify-center p-12'>
+    <div className="flex items-center min-w-screen min-h-screen">
+      <main className='flex w-full flex-col justify-center p-12'>
         <div className='Team Name'>
           <Form {...form}>
             <form className='space-y-8'>
@@ -51,9 +52,9 @@ export default function Home() {
           </Form>
         </div>
         <div>
-          <MemberDetails />
-          <MemberDetails />
-          <MemberDetails />
+          <MemberDetails data = {data[0]}/>
+          <MemberDetails data = {data[1]}/>
+          <MemberDetails data = {data[2]}/>
         </div>
       </main>
     </div>
