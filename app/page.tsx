@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <>
     <div className="flex items-center min-w-screen min-h-screen bg-[#1D125B]">
-      <main className="flex w-full lg:w-1/2 flex-col justify-center p-10 ">
+      <main className="flex w-full lg:w-3/5 flex-col justify-center p-10 ">
         <div className="Team Name bg-[#F7FCF9] p-4">
           <Form {...form}>
             <form className="space-y-8 mb-3">
@@ -62,7 +62,7 @@ export default function Home() {
         <Button className="bg-white text-[#FE9032] hover:scale-[1.01] hover:bg-yellow-200 transition-all">Submit</Button>
         </div>
       </main>
-      <div className="ml-8 border-2 border-[#1D125B] sticky">
+      <div className="hidden lg:flex h-full w-1/2  justify-center items-center mr-4">
         <img src="https://steptodown.com/istock-downloader/images/steptodown.com171984.jpg" alt="" className="h-[600px] w-[600px]"/>
       </div>
     </div>
